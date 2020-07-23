@@ -1,0 +1,74 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:lang="http://www.springframework.org/schema/lang" 
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/lang
+http://www.springframework.org/schema/lang/spring-lang.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd" default-autowire="byName">
+      
+      <context:annotation-config/>
+
+     <bean id="student" name="st" class="com.nit.spring.beans.Student" autowire="byType">
+         <property name="studentId" value="123"/>
+         <property name="studentName" value="Naresh"/>
+     </bean>
+               
+     <bean id="course" name="cour" class="com.nit.spring.beans.Course">
+       <property name="courseId" value="NITCORE123"/>
+       <property name="courseName" value="Spring"/>
+       <property name="courseFee" value="6000"/>
+     </bean>     
+   
+     <bean id="address" name="add" class="com.nit.spring.beans.Address"/> 
+     
+     <bean id="tb" name="test" class="com.nit.spring.beans.TestBean"/>
+     
+     <bean id="service" class="com.nit.spring.beans.ReportService"/>
+
+   <!-- Definition for javaCollection -->
+   <bean id = "javaCollection" class = "com.tutorialspoint.JavaCollection">
+      
+      <!-- results in a setAddressList(java.util.List) call -->
+      <property name = "addressList">
+         <list>
+            <value>INDIA</value>
+            <value>Pakistan</value>
+            <value>USA</value>
+            <value>USA</value>
+         </list>
+      </property>
+
+      <!-- results in a setAddressSet(java.util.Set) call -->
+      <property name = "addressSet">
+         <set>
+            <value>INDIA</value>
+            <value>Pakistan</value>
+            <value>USA</value>
+            <value>USA</value>
+         </set>
+      </property>
+
+      <!-- results in a setAddressMap(java.util.Map) call -->
+      <property name = "addressMap">
+         <map>
+            <entry key = "1" value = "INDIA"/>
+            <entry key = "2" value = "Pakistan"/>
+            <entry key = "3" value = "USA"/>
+            <entry key = "4" value = "USA"/>
+         </map>
+      </property>
+      
+      <!-- results in a setAddressProp(java.util.Properties) call -->
+      <property name = "addressProp">
+         <props>
+            <prop key = "one">INDIA</prop>
+            <prop key = "one">INDIA</prop>
+            <prop key = "two">Pakistan</prop>
+            <prop key = "three">USA</prop>
+            <prop key = "four">USA</prop>
+         </props>
+        
+</beans>        
